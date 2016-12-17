@@ -16,10 +16,16 @@ def scrape( data ):
     webpage = requests.get( url )
     scrape_url = soup( webpage.content )
     
+    count = 0
+    
     for i in scrape_url.find_all('h3', { 'class': 'r' }):
         for a in i:
-            results.append( { 'link': a.get('href')[7:] } )
-    
+            
+            count += 1
+            
+            if count <= 4:
+                results.append( { 'link': a.get('href')[7:] } )
+            
     return results
 
 

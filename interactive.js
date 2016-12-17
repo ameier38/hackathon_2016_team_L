@@ -1,4 +1,18 @@
+console.log( activities );
 var ctx = document.getElementById("ctx").getContext("2d");
+ctx.font = '30px Arial';
+var HEIGHT = 500;
+var WIDTH = 500;
+var timeWhenGameStarted = Date.now();   
+ 
+var frameCount = 0;
+ 
+var score = 0;
+var user;
+var nameList = {};
+ctx.fillText(activities[0].scipted,10,50);
+
+/* var ctx = document.getElementById("ctx").getContext("2d");
 ctx.font = '30px Arial';
  
 var HEIGHT = 500;
@@ -297,7 +311,7 @@ startNewGame();
  
 setInterval(update,40);
  
-
+*/
  
  
  
