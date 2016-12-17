@@ -24,12 +24,12 @@ function testCollisionEntity(entity1,entity2){  //return if colliding (true/fals
         return distance < 30;
 }
  
-function Enemy(id,x,y,spdY){
+function Enemy(id,x,y,spdY,word){
         var enemy3 = {
                 x:x,
                 y:y,
                 spdY:spdY,
-                name:'L',
+                name:word,
                 id:id,
         };
         enemyList[id] = enemy3;
@@ -67,15 +67,17 @@ function update(){
        
 }
  $("#goButton").click(function(){
-var dropdown= $("#click").val()   
+        var dropdown= $("#click").val()   
+        var word_cat_array= test_activities[dropdown];
+        word_cat_array.forEach(function(word_cat){
+        Enemy(1,Math.random()*900,0,3,word_cat.word);      
+   })
    
    
    
-   
-   
-   Enemy('E1',330,0,3);
-   Enemy('E2',500,0,3);
-   Enemy('E3',800,0,3); 
+   Enemy('E1',330,0,3,'cat');
+   Enemy('E2',500,0,3,'dog');
+   Enemy('E3',800,0,3,'taco'); 
     updateEntity(player); 
      
  })

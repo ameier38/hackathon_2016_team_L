@@ -1,5 +1,8 @@
 var test_activities = {
-    'donate to': [{}, ]
+    'donate to': [
+        {'word': 'coding', 'category': 'scripted'},
+        {'word': 'students', 'category': 'scripted'}
+    ]
 }
 
 var activities = {

@@ -41,7 +41,7 @@ def send():
     if len( data ) == 0:
         return jsonify({ 'error_message': 'No results found.', 'len': 0, 'status': None })
         
-    return jsonify({ 'resluts': scrape( data ), 'len': 0, 'status': True })
+    return jsonify({ 'results': scrape( data ), 'len': 0, 'status': True })
 
 
 app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)), debug=True)

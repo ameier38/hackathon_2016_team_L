@@ -2,8 +2,6 @@
 <html>
     <head>
         <title></title>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" type="text/css" />
     </head>
@@ -37,11 +35,11 @@
         <br>
          <div class="text-center" id="interactve">
             <canvas id="ctx" width="900" height="500" style="border:1px solid #000000;"></canvas> 
-            <input type=text class="guess">
+            <!--<input type=text class="guess">-->
         </div>
         <br>
         
-        <div class="container">
+        <div id="resultsBox" class="container">
             <div class="row">
             <div id="results">
                     <div id='results-container' class="container">
@@ -79,15 +77,20 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <div id='save' class="col-md-12">save</div>
                 </div>
             </div>        
             <br>
             
         </div>
+        
+        <footer class="text-center">Made with love at the ScriptEd Microsoft Hackathon. 
+          <br>
+          © 2016 Connect to You, Inc.
+        </footer>
     </div>
     
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='data.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='interactive.js') }}"></script>
