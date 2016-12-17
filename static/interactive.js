@@ -1,5 +1,86 @@
-console.log( activities );
 var ctx = document.getElementById("ctx").getContext("2d");
+ctx.font = '30px Arial';
+ctx.font.color ="grey"
+ 
+var HEIGHT = 500;
+var WIDTH = 900;
+var message = 'Bouncing';
+var player = {
+        x:50,
+        y:40,
+        spdY:5,
+        name:'W',      
+};
+ 
+var enemyList = {};
+function getDistanceBetweenEntity(entity1,entity2){     //return distance (number)
+        var vx = entity1.x - entity2.x;
+        var vy = entity1.y - entity2.y;
+        return Math.sqrt(vx*vx+vy*vy);
+}
+ 
+function testCollisionEntity(entity1,entity2){  //return if colliding (true/false)
+        var distance = getDistanceBetweenEntity(entity1,entity2);
+        return distance < 30;
+}
+ 
+function Enemy(id,x,y,spdY){
+        var enemy3 = {
+                x:x,
+                y:y,
+                spdY:spdY,
+                name:'L',
+                id:id,
+        };
+        enemyList[id] = enemy3;
+}
+setInterval(update,40);
+function updateEntity(something){
+        something.y += something.spdY;
+        ctx.strokeText(something.name,something.x,something.y);
+               
+               
+        if(something.x < 0 || something.x > WIDTH){
+                something.x -=3 ;
+        }
+        if(something.y < 0 || something.y > HEIGHT){
+                something.spdY = -something.spdY;
+        }
+}
+ 
+ 
+function update(){
+        ctx.clearRect(0,0,WIDTH,HEIGHT);
+       
+        for(var key in enemyList){
+                updateEntity(enemyList[key]);
+               
+                var isColliding = testCollisionEntity(player,enemyList[key]);
+                if(isColliding){
+                        console.log('Colliding!');
+                }
+        }
+       
+        updateEntity(player);
+       
+       
+       
+}
+ $("#goButton").click(function(){
+var dropdown= $("#click").val()   
+   
+   
+   
+   
+   
+   Enemy('E1',330,0,3);
+   Enemy('E2',500,0,3);
+   Enemy('E3',800,0,3); 
+    updateEntity(player); 
+     
+ })
+ 
+/*var ctx = document.getElementById("ctx").getContext("2d");
 ctx.font = '30px Arial';
 var HEIGHT = 500;
 var WIDTH = 500;
@@ -10,9 +91,13 @@ var frameCount = 0;
 var score = 0;
 var user;
 var nameList = {};
-ctx.fillText(activities[0].scipted,10,50);
+ctx.strokeText(activities[0].scipted[1],10,50);
+ctx.moveTo(40,60)
 
-/* var ctx = document.getElementById("ctx").getContext("2d");
+function Name(id,x,y,spdX,spdY){
+    
+}
+ var ctx = document.getElementById("ctx").getContext("2d");
 ctx.font = '30px Arial';
  
 var HEIGHT = 500;
@@ -310,8 +395,4 @@ user = User();
 startNewGame();
  
 setInterval(update,40);
- 
-*/
- 
- 
- 
+ */

@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from bs4 import BeautifulSoup as soup
 import requests
 import os
@@ -6,12 +6,12 @@ import os
 
 app = Flask(__name__)
 
-
 def scrape( data ):
     
     results = [  ]
     
     url = 'https://www.google.com/search?q=I+want+to' +  data
+    # image_url = 'https://www.google.com/search?q=i+want+to+'+  +'&source=lnms&tbm=isch&sa=X&ved=0ahUKEwie9Zay9fvQAhUk_IMKHW0IBdgQ_AUICygE&biw=1122&bih=691'
     
     webpage = requests.get( url )
     scrape_url = soup( webpage.content )
@@ -28,16 +28,20 @@ def scrape( data ):
             
     return results
 
+@app.route('/')
+def home():
+    
+    return render_template('index.html')
 
-@app.route('/send_data')
+@app.route('/GETdata')
 def send():
     
     data = request.args.get('d')
     
     if len( data ) == 0:
         return jsonify({ 'error_message': 'No results found.', 'len': 0, 'status': None })
-    
+        
     return jsonify({ 'resluts': scrape( data ), 'len': 0, 'status': True })
 
 
-app.run(host=os.getenv('IP', 'localhost'), port=int(os.getenv('PORT', 8080)),debug=True)
+app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)), debug=True)
