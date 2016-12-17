@@ -53,3 +53,8 @@ button, input, #basic-addon1{
     border-radius: 5px;
     background-color: #E76F51;
 }
+
+footer{
+    padding: 5px;
+    color: white;
+}

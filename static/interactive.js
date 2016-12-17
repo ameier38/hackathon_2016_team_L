@@ -1,4 +1,11 @@
 var ctx = document.getElementById("ctx").getContext("2d");
+    var test_activities = {
+    'donate to': [
+        {'word': 'coding', 'category': 'scripted'},
+        {'word': 'students', 'category': 'scripted'}
+    ]
+}
+
 ctx.font = '30px Arial';
 ctx.font.color ="grey"
  
@@ -38,20 +45,15 @@ setInterval(update,40);
 function updateEntity(something){
         something.y += something.spdY;
         ctx.strokeText(something.name,something.x,something.y);
-               
-               
-        if(something.x < 0 || something.x > WIDTH){
+   if(something.x < 0 || something.x > WIDTH){
                 something.x -=3 ;
         }
-        if(something.y < 0 || something.y > HEIGHT){
+   if(something.y < 0 || something.y > HEIGHT){
                 something.spdY = -something.spdY;
         }
 }
- 
- 
 function update(){
         ctx.clearRect(0,0,WIDTH,HEIGHT);
-       
         for(var key in enemyList){
                 updateEntity(enemyList[key]);
                
@@ -60,14 +62,13 @@ function update(){
                         console.log('Colliding!');
                 }
         }
-       
         updateEntity(player);
-       
-       
-       
 }
  $("#goButton").click(function(){
-        var dropdown= $("#click").val()   
+      
+        var dropdown= $("#click").val() 
+       console.log(dropdown)
+       console.log(test_activities)
         var word_cat_array= test_activities[dropdown];
         word_cat_array.forEach(function(word_cat){
         Enemy(1,Math.random()*900,0,3,word_cat.word);      
