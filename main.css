@@ -1,0 +1,25 @@
+body{
+    padding-top: 50px;
+}
+
+.bin {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+
+#searchBox, #searchBtn {
+    margin: 20px;
+}
+
+
+#tab {
+    background-color: blue;
+}
+#save {
+    background-color: red;
+}
+#results-container {
+    background-color: green;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+        <link rel="stylesheet" href="main.css" type="text/css" />
+    </head>
+    <body>
+     <div class="container">
+        <h1 class="name text-center">CTY</h1>
+        
+        
+        <div class="container">
+            <div class="input-group">
+              <span class="input-group-addon" id="sizing-addon1">I want to</span>
+                  <div class="input-group-btn">
+                    <button id="clickButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span id ="click">Click</span><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li id ="donate"><a href="#">donate to </a></li>
+                      <li id ="volunteer"><a href="#">volunteer for</a></li>
+                      <li id ="adopt"><a href="#">adopt</a></li>
+                      <li id ="helpBuild"><a href="#">help build</a></li>
+                    </ul>
+                  </div>
+                  <input type="text" id='searchBox' class="form-control" placeholder="something awesome" aria-label="...">
+                 
+            </div>
+        </div>
+        
+        <br>
+         <div id="interactve">
+            <canvas id="ctx" width="500" height="500" style="border:1px solid #000000;"></canvas> 
+        </div>
+        <br>
+        
+        <div class="container">
+            <div class="row">
+                <div id="results">
+                    <div id='results-container' class="bin container container-fluid col-md-9 col-xs-9">results</div>
+                    <div id='tab' class="bin container container-fluid col-md-3 col-xs-3">tab</div>
+                    <div id='save' class="bin container container-fluid col-md-12 col-xs-12">save</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="interactive.js"></script>
+    
+    </body>
+</html>
