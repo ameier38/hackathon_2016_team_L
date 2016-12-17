@@ -28,11 +28,9 @@ $(document).ready(function() {
     
     $('#goButton').click(function() {
         
-        // for ( var i in key_phrases ) {
-            $.getJSON('http://hackathon-team2016-kevinhui98.c9users.io/send_data?d=' + data + $('.searchBox').val() , function( resp ) {
+            $.getJSON('http://hackathon-team2016-kevinhui98.c9users.io/GETdata?d=' + data + $('.searchBox').val() , function( resp ) {
                 console.log( resp );
-            });   
-        // }
+            });
         
     });
     
